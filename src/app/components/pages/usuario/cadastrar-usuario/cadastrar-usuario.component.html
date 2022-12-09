@@ -1,1 +1,3 @@
-<p>cadastrar-usuario works!</p>
+nome:<input type="text" [(ngModel)]="usuario.nome" /><br />
+nascimento:<input type="date" [(ngModel)]="usuario.nascimento"><br />
+<input type="button" value="cadastrar" (click)="cadastrar()" />

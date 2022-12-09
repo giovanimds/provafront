@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Usuario} from "../../../../Model/Usuario";
 import {IMC} from "../../../../Model/IMC";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-cadastrar-imc',
@@ -13,7 +14,7 @@ export class CadastrarImcComponent implements OnInit{
   public usuarioId!: number;
   public altura: number = 0;
   public peso: number = 0;
-  public constructor(private http: HttpClient) {
+  public constructor(private http: HttpClient, private router: Router) {
   }
   ngOnInit() {
     this.http.get<Usuario[]>("https://localhost:5001/api/usuario/listar").subscribe((usuarios) => {
@@ -33,6 +34,7 @@ export class CadastrarImcComponent implements OnInit{
     this.http.post<IMC>("https://localhost:5001/api/imc/cadastrar", imc).subscribe((imc) => {
       alert("OK, CONSOLE.TABLE")
       console.table(imc)
+      this.router.navigate([""])
     })
   }
 }
