@@ -1,0 +1,31 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Nascimento</th>
+      <th scope="col">Altura</th>
+      <th scope="col">Peso</th>
+      <th scope="col">Resultado</th>
+      <th scope="col">Classificação</th>
+      <th scope="col">Grau</th>
+      <th scope="col">Criado em</th>
+      <th scope="col">Alterar IMC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let imc of imcs">
+      <th scope="row">{{imc.imcId}}</th>
+      <td>{{imc.usuario.nome}}</td>
+      <td>{{imc.usuario.nascimento}}</td>
+      <td>{{imc.altura}}</td>
+      <td>{{imc.peso}}</td>
+      <td>{{imc.resultado}}</td>
+      <td>{{imc.classificacao}}</td>
+      <td>{{imc.grau}}</td>
+      <td>{{imc.criadoEm}}</td>
+      <td><a routerLink="alterar-imc/{{imc.imcId}}"> Alterar </a> </td>
+    </tr>
+
+  </tbody>
+</table>
